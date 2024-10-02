@@ -2,7 +2,7 @@
 
 ## 介绍
 
-
+知己翻译器是一款基于 Python 的翻译工具，实时监测剪贴板内容并进行翻译，提供快速、准确的翻译服务。
 
 ## 功能
 
@@ -21,4 +21,4 @@ pip install requests
 pip install pyperclip
 ```
 
-3. 运行 run.bat 文件
+3. 运行 run.bat 文件（需要 Anaconda 环境）
