@@ -1,10 +1,10 @@
 {
     "baidu": {
-        "appid": "你的百度翻译 APPID",
-        "appkey": "你的百度翻译密钥"
+        "appid": "20241002002165660",
+        "appkey": "QzKz4JmGGanEStEzX8m6"
     },
     "openai": {
-        "api_url": "https://api.chatgpt.com/v1/chat/completions",
-        "api_key": "你的 OpenAI API 密钥"
+        "api_url": "https://api.chatanywhere.tech/v1/chat/completions",
+        "api_key": "sk-BHVzyqLWwEYUBp6bNvgxc1eFrKz8RQO0BqDkUra34L8DCp7t"
     }
 }
