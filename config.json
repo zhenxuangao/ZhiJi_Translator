@@ -1,0 +1,10 @@
+{
+    "baidu": {
+        "appid": "你的百度翻译 APPID",
+        "appkey": "你的百度翻译密钥"
+    },
+    "openai": {
+        "api_url": "https://api.chatgpt.com/v1/chat/completions",
+        "api_key": "你的 OpenAI API 密钥"
+    }
+}
