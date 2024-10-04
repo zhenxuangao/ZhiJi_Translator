@@ -44,7 +44,7 @@ def translate(query):
     if 'trans_result' in result:
         translated_text = ''
         for item in result['trans_result']:
-            translated_text += item['dst'] + '\n'
+            translated_text += item['dst'] + '\n' + '\n'
         return translated_text.strip()
     else:
         return f'翻译失败，错误信息:\n{json.dumps(result, indent=4, ensure_ascii=False)}'

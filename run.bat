@@ -7,5 +7,3 @@ python codes/ZhijiTranslator.py
 
 :: 退出 Anaconda 环境
 call conda deactivate
-
-pause

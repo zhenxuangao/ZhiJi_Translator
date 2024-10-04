@@ -24,26 +24,34 @@ def translate(query):
         "messages": [
             {"role": "system", "content": "你是一个翻译助手。请将用户输入的文本翻译成中文。不要输出除了翻译结果之外的任何内容。"},
             {"role": "user", "content": f"请将以下文本翻译成中文：\n{query}"}
-        ]
+        ],
+        "stream": True
     }
     
     try:
         # 发送请求
-        response = requests.post(api_url, headers=headers, json=data)
+        response = requests.post(api_url, headers=headers, json=data, stream=True)
         response.raise_for_status()
         
-        # 解析响应
-        result = response.json()
-        translated_text = result['choices'][0]['message']['content']
-        
-        return translated_text.strip()
+        # 解析流式响应
+        for line in response.iter_lines():
+            if line:
+                line = line.decode('utf-8')
+                if line.startswith('data: '):
+                    json_str = line[6:]
+                    if json_str != '[DONE]':
+                        chunk = json.loads(json_str)
+                        if 'choices' in chunk and len(chunk['choices']) > 0:
+                            content = chunk['choices'][0].get('delta', {}).get('content', '')
+                            if content:
+                                yield content
     except requests.exceptions.RequestException as e:
-        return f"翻译失败，错误信息：\n{str(e)}"
-    except (KeyError, IndexError) as e:
-        return f"解析响应失败，错误信息：\n{str(e)}"
+        yield f"翻译失败，错误信息：\n{str(e)}"
+    except json.JSONDecodeError as e:
+        yield f"解析响应失败，错误信息：\n{str(e)}"
 
 # 使用示例
 if __name__ == '__main__':
     query = "Hello World! This is 1st paragraph.\nThis is 2nd paragraph."
-    result = translate(query)
-    print(result)
+    for chunk in translate(query):
+        print(chunk, end='', flush=True)
