@@ -1,8 +1,8 @@
-# 知己翻译器
+# 知己翻译
 
 ## 介绍
 
-知己翻译器是一款基于 Python 的翻译工具，实时监测剪贴板内容并进行翻译，提供快速、准确的翻译服务。
+知己翻译是一款基于 Python 的翻译工具，实时监测剪贴板内容并进行翻译，提供快速、准确的翻译服务。
 
 ## 功能
 
@@ -18,18 +18,45 @@
 
 ### 方法一：源码运行
 
-1. 配置 config.json 文件中的 API 密钥
+1. 创建并配置 config.json 文件
+```json
+{
+    "baidu": {
+        "appid": "你的百度翻译 appid",
+        "appkey": "你的百度翻译 appkey"
+    },
+    "openai": {
+        "api_url": "OpenAI API 地址",
+        "api_key": "你的 OpenAI api key"
+    }
+}
+```
 2. 安装依赖包
 ```bash
 pip install requests
 pip install pyperclip
 ```
-3. 运行 run.bat 文件（需要 Anaconda 环境）
+3. 运行以下指令（若有 anaconda 环境，运行 run.bat 文件即可）
+```bash
+python ZhiJiTranslator.py
+```
 
-### 方法二：安装包运行
+### 方法二：.exe 文件运行
 
 这一方法通过 pyinstaller 打包成安装包，方便没有 python 环境的用户使用。
 
-1. 下载并解压 zip 文件
-2. 配置 config.json 文件中的 API 密钥
+1. 下载 dist 文件夹以及其中的文件
+2. 创建并配置 config.json 文件
+```json
+{
+    "baidu": {
+        "appid": "你的百度翻译 appid",
+        "appkey": "你的百度翻译 appkey"
+    },
+    "openai": {
+        "api_url": "OpenAI API 地址",
+        "api_key": "你的 OpenAI api key"
+    }
+}
+```
 3. 运行 ZhiJiTranslator.exe 文件

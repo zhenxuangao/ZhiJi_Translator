@@ -5,7 +5,7 @@ a = Analysis(
     ['codes\\ZhiJiTranslator.py'],
     pathex=[],
     binaries=[],
-    datas=[('translator_config.json', '.'), ('config.json', '.'), ('assets', 'assets')],
+    datas=[('translator_config.json', '.'), ('assets', 'assets')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

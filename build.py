@@ -6,6 +6,5 @@ PyInstaller.__main__.run([
     '--windowed',
     '--name=ZhiJiTranslator',
     '--add-data=translator_config.json;.',
-    '--add-data=config.json;.',
     '--add-data=assets;assets',
 ])

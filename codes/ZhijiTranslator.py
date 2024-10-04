@@ -11,7 +11,7 @@ import os
 class ZhijiTranslator:
     def __init__(self, root):
         self.root = root
-        self.root.title("知己翻译器")
+        self.root.title("知己翻译")
         
         # 获取系统DPI缩放
         user32 = ctypes.windll.user32
