@@ -21,9 +21,14 @@ class ZhijiTranslator:
         # 加载配置
         self.config = self.load_config()
         
+        # 设置窗口最小大小
+        min_width = int(400 * scale_factor)
+        min_height = int(250 * scale_factor)
+        self.root.minsize(min_width, min_height)
+        
         # 根据配置设置窗口大小和位置
-        width = self.config.get('width', int(400 * scale_factor))
-        height = self.config.get('height', int(350 * scale_factor))
+        width = max(self.config.get('width', min_width), min_width)
+        height = max(self.config.get('height', min_height), min_height)
         x = self.config.get('x', 100)
         y = self.config.get('y', 100)
         self.root.geometry(f"{width}x{height}+{x}+{y}")
