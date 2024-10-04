@@ -30,5 +30,6 @@ pip install pyperclip
 
 这一方法通过 pyinstaller 打包成安装包，方便没有 python 环境的用户使用。
 
-1. 下载安装包
-2. 运行安装包
+1. 下载并解压 zip 文件
+2. 配置 config.json 文件中的 API 密钥
+3. 运行 ZhiJiTranslator.exe 文件
