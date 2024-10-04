@@ -31,12 +31,12 @@
     }
 }
 ```
-1. 安装依赖包
+2. 安装依赖包
 ```bash
 pip install requests
 pip install pyperclip
 ```
-1. 运行以下指令（若有 anaconda 环境，运行 run.bat 文件即可）
+3. 运行以下指令（若有 anaconda 环境，运行 run.bat 文件即可）
 ```bash
 python ZhiJiTranslator.py
 ```
@@ -46,7 +46,7 @@ python ZhiJiTranslator.py
 这一方法通过 pyinstaller 打包成安装包，方便没有 python 环境的用户使用。
 
 1. 下载 dist 文件夹以及其中的文件
-1. 在 dist 目录下新建 config.json 文件，写入以下内容：
+2. 在 dist 目录下新建 config.json 文件，写入以下内容：
 ```json
 {
     "baidu": {
